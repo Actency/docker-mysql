@@ -14,9 +14,9 @@ Available tags are:
       # web with xdebug - actency images
       web:
         # actency/docker-apache-php available tags: latest, 7.0, 5.6, 5.5, 5.4, 5.3
-        #image: actency/docker-apache-php:5.6
+        image: actency/docker-apache-php:5.6
         # actency/docker-nginx-php available tags: latest, 5.6, 5.5, 5.4
-        image: actency/docker-nginx-php:5.6
+        #image: actency/docker-nginx-php:5.6
         ports:
           - "80:80"
         environment:
@@ -33,7 +33,8 @@ Available tags are:
 
       # database container - actency images
       database:
-        image: actency/docker-mysql:5.7
+        # actency/docker-mysql available tags: latest, 5.7, 5.6, 5.5
+        image: actency/docker-mysql:5.6
         ports:
           - "3306:3306"
         environment:
@@ -44,16 +45,14 @@ Available tags are:
         #volumes:
           #- /my/custom:/etc/mysql/conf.d/
 
-      # phpmyadmin container - official images
+      # phpmyadmin container - actency images
       phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: actency/docker-phpmyadmin
         ports:
           - "8010:80"
         environment:
-          - PMA_HOST=mysql
-          - PMA_USER=root
-          - PMA_PASSWORD=mysqlroot
-          - PHP_UPLOAD_MAX_FILESIZE=100MB
+          - MYSQL_ROOT_PASSWORD=mysqlroot
+          - UPLOAD_SIZE=1G
         links:
           - database:mysql
 
