@@ -78,7 +78,7 @@ if [ "$1" = 'mysqld' -a -z "$wantHelp" ]; then
 		fi
 
 		if [ "$MYSQL_DATABASE" ]; then
-			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci;" | "${mysql[@]}"
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;" | "${mysql[@]}"
 			mysql+=( "$MYSQL_DATABASE" )
 		fi
 
