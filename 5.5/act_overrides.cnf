@@ -1,0 +1,11 @@
+[mysqld]
+# Innodb
+innodb_file_per_table = 1
+innodb_flush_method = O_DIRECT
+innodb-flush-log-at-trx-commit = 2
+transaction-isolation = READ-COMMITTED
+
+# Logs
+log-error               = /var/log/mysql/mysql_error.log
+slow-query-log          = 1
+slow-query-log_file     = /var/log/mysql/slow-query.log
