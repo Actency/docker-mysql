@@ -32,6 +32,7 @@ Available tags are:
           - mailhog
           - memcache
           - solr
+        tty: true
 
       # database container - actency images
       database:
