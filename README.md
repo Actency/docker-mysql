@@ -9,6 +9,6 @@ Available tags are:
 
 # Docker-compose
 
-Please check our docker-compose.yml example file at: https://github.com/Actency/docker-apache-php
+Please check our complete docker-compose.yml example at: https://github.com/Actency/docker-apache-php
 
 [Docker Hub page](https://hub.docker.com/r/actency/docker-mysql/)
